@@ -1,0 +1,16 @@
+<form class="form">
+  <mat-form-field class="full-width">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+      [matAutocomplete]="auto" [(ngModel)]="category">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let op of option" [value]="op">
+        {{op}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+<div [ngSwitch]="category">
+  <div *ngSwitchCase="'options'" class="container">
+    <app-options *ngFor="let item of options" [options]="item" class="item"></app-options>
+  </div>
+</div>

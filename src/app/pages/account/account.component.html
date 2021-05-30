@@ -1,0 +1,12 @@
+<h1 style="text-align: center;margin-top: 10px;">ACCOUNTS</h1>
+<app-account-list *ngFor="let item of account | async" [account]="item">
+</app-account-list>
+<br>
+
+<button mat-fab class="action-btn" (click)="openDialog()" style="float: right; margin-right: 5%;">
+  <mat-icon>add</mat-icon>
+</button>
+<br><br><br>
+<h1 style="text-align: center;">SOME OF THE RICHEST...</h1>
+<app-account-list style="margin: 20px;" *ngFor="let item of accountRichest | async" [account]="item">
+</app-account-list>

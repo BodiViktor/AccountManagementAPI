@@ -1,0 +1,42 @@
+<form [formGroup]="form">
+  <h3>CREATE ACCOUNT</h3>
+  <br>
+  <mat-form-field class="max-width" style="margin-right: 5px;">
+    <input matInput placeholder="Account type" focus formControlName="accountType" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <input type="number" matInput placeholder="Credit limit" focus formControlName="creditLimit" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="max-width" style="margin-right: 5px;">
+    <input matInput placeholder="Description" focus formControlName="description" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <input matInput placeholder="Href" focus formControlName="href" required>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field class="max-width" style="margin-right: 5px;">
+    <input matInput placeholder="Last modified" focus formControlName="lastModified" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <input matInput placeholder="Name" focus formControlName="name" required>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field class="max-width" style="margin-right: 5px;">
+    <input matInput placeholder="Payment status" focus formControlName="paymentStatus" required>
+  </mat-form-field>
+
+  <mat-form-field class="max-width">
+    <input matInput placeholder="State" focus formControlName="state" required>
+  </mat-form-field>
+
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-button (click)="dialogRef.close()" class="margin-right">BACK</button>
+    <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">CREATE</button>
+  </div>
+</form>

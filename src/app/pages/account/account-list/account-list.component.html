@@ -1,0 +1,18 @@
+<mat-card style="width:90%; margin-left: auto; margin-right: auto; margin-top: 10px;"
+  [ngClass]="account.creditLimit < 10000 ? 'poor' : account.creditLimit < 50000 ? 'average' : 'rich' " *ngIf="account">
+  <mat-card-header>
+    <mat-card-title>{{account.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-divider>
+  </mat-divider>
+  <mat-grid-list cols="3" rowHeight="10:1">
+    <mat-grid-tile style="display: grid; align-items: center;"> {{account.description}} </mat-grid-tile>
+    <mat-grid-tile style="display: grid; align-items: center;"> {{account.creditLimit}} </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-icon-button (click)="delete(account.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</mat-card>

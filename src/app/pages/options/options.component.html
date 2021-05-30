@@ -1,0 +1,12 @@
+<mat-card style="background-color: rgb(34, 34, 34);">LET ME REPRESENT: THE OPTION's ☻</mat-card>
+<mat-card [style.backgroundColor]="options.id == 1 ? '#845EC2': options.id == 2 ? '#936C00': '#008CCA' "
+  *ngIf="options">
+  <mat-card-content appHighlight style="padding:10px; border-radius:10px">
+    <mat-grid-list cols="2" rowHeight="22:5">
+      <mat-grid-tile>The ID is " {{options.id}} " for this card</mat-grid-tile>
+      <mat-grid-tile><button mat-raised-button style="float: right;" [routerLink]="['/account']"
+          routerLinkActive="router-link-active">IF YOU WANT TO GO MOVE ON CLICK HERE</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
