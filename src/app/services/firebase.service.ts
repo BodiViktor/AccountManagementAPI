@@ -32,6 +32,14 @@ export class FirebaseService {
     }).valueChanges() as Observable<Account[]>;
   }
 
+  getRichestByName(collectionName: string): Observable<Account[]> {
+    return this.firestore.collection(collectionName, ref => {
+      let query: CollectionReference | Query = ref;
+      query = query.where('name', "==", 'asd');
+      return query;
+    }).valueChanges() as Observable<Account[]>;
+  }
+
   getById(collectionName: string, id: string): Observable<any> {
     return this.firestore.collection(collectionName).doc(id).valueChanges();
   }

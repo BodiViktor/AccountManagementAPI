@@ -15,9 +15,12 @@ import { Account } from 'src/app/shared/models/account.model';
 export class AccountComponent implements OnInit {
   options = OPTIONS;
   category?= '';
-  account: Observable<Account[]> | null = null;
   page = 'account';
+
+  account: Observable<Account[]> | null = null;
   accountRichest: Observable<Account[]> | null = null;
+  accountRichestAsd: Observable<Account[]> | null = null;
+
   form: FormGroup | null = null;
 
   constructor(private dialog: MatDialog, private service: FirebaseService) { }
@@ -26,6 +29,7 @@ export class AccountComponent implements OnInit {
     this.category = 'options';
     this.listAccounts();
     this.richest();
+    this.richestAsd();
   }
 
   openDialog(): void {
@@ -47,4 +51,9 @@ export class AccountComponent implements OnInit {
   richest() {
     this.accountRichest = this.service.getRichest('account');
   }
+
+  richestAsd() {
+    this.accountRichestAsd = this.service.getRichestByName('account');
+  }
+
 }
